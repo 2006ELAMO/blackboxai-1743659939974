@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayman Raving Rabbids 2 BF Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .dropzone {
+            border: 2px dashed #4b5563;
+            transition: all 0.3s ease;
+        }
+        .dropzone.active {
+            border-color: #3b82f6;
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center bg-[url('https://images.pexels.com/photos/163036/mario-luigi-yoschi-figures-163036.jpeg')] bg-cover bg-blend-overlay bg-gray-800">
+    <div class="backdrop-blur-sm bg-black/50 p-8 rounded-xl w-full max-w-2xl">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold mb-2">Rayman Raving Rabbids 2</h1>
+            <h2 class="text-2xl text-blue-400">Wii to PS3 BF File Converter</h2>
+        </div>
+
+        <div id="dropzone" class="dropzone p-12 rounded-lg text-center cursor-pointer mb-6">
+            <div class="flex flex-col items-center justify-center">
+                <i class="fas fa-file-upload text-5xl text-blue-400 mb-4"></i>
+                <p class="text-xl">Drag & drop your Wii .bf file here</p>
+                <p class="text-gray-400 mt-2">or click to browse files</p>
+                <input type="file" id="fileInput" class="hidden" accept=".bf">
+            </div>
+        </div>
+
+        <div id="progress" class="hidden items-center justify-center mb-6">
+            <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mr-4"></div>
+            <span id="statusText" class="text-lg">Converting file...</span>
+        </div>
+
+        <button id="downloadBtn" disabled class="w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed transition">
+            <i class="fas fa-download mr-2"></i> Download PS3 .bf File
+        </button>
+
+        <div id="errorAlert" class="hidden mt-4 p-4 bg-red-600/80 rounded-lg">
+            <i class="fas fa-exclamation-circle mr-2"></i>
+            <span id="errorText"></span>
+        </div>
+
+        <div id="successAlert" class="hidden mt-4 p-4 bg-green-600/80 rounded-lg">
+            <i class="fas fa-check-circle mr-2"></i>
+            <span>File converted successfully!</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
